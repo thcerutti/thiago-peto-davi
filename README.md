@@ -7,3 +7,5 @@ Material de referêcia: [Curso em vídeo](https://www.youtube.com/watch?v=OmmJBf
 ## Colaboração
 
 Repositório compartilhado com [Thiago](https://github.com/thcerutti), [Peto](https://github.com/Petoteta) e [Davi](https://github.com/zanotta23).
+
+As páginas dos exercícios podem ser acessadas pelo [link](https://thcerutti.github.io/thiago-peto-davi/).
