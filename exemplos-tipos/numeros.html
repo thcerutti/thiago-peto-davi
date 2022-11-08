@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exemplos - Números</title>
+  </head>
+  <body>
+    <h1>Alguns exemplos de números</h1>
+    <div><strong>Minha idade é:</strong><span id="idade"></span></div>
+    <div><strong>Nasci no ano de:</strong><span id="anoNascimeto"></span></div>
+
+    <div>
+      <button onclick="informarIdade()">Informar</button>
+      <button onclick="calcularDataNascimeto()">Calcular</button>
+    </div>
+    <script>
+      var idade = 0;
+
+      function informarIdade() {
+        idade = window.prompt("iforme sua idade"); // pede a idade
+        var elementoIdade = document.getElementById("idade"); // pega o elemento onde o ano será mostrado
+        elementoIdade.innerText = idade; // atribui idade ao elemento html
+      }
+
+      function calcularDataNascimeto() {
+        var anoAtual = new Date().getFullYear(); // pega o ao atual
+        var anoNascimeto = anoAtual - idade; // calcula ano de nascimento
+        var elementoAnoNascimento = document.getElementById("anoNascimeto"); // pega o elemento onde o ano será mostrado
+        elementoAnoNascimento.innerHTML = anoNascimeto; // atribui ano ao elemento html
+      }
+    </script>
+  </body>
+</html>
