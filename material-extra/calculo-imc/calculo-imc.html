@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <title>Cálculo de IMC</title>
+  </head>
+  <body>
+    <h1>Cálculo de IMC  <i class="nes-bulbasaur"></i>
+    </h1>
+
+    <div>
+      <p>
+        O IMC é reconhecido como padrão internacional para avaliar o grau de
+        sobrepeso e obesidade. É calculado dividindo o peso (em kg) pela altura
+        ao quadrado (em metros).
+      </p>
+      <pre>IMC = Peso ÷ (Altura × Altura)</pre>
+      <p>Exemplo de como calcular o IMC:</p>
+      <pre>IMC = 80 kg ÷ (1,80 m × 1,80 m) = 24,69 kg/m2 (Peso ideal)</pre>
+      <p>Utilize a calculadora abaixo para fazer o seu cálculo:</p>
+    </div>
+
+    <div class="calculo">
+      <div class="nes-field">
+        <label for="name_field">peso</label>
+        <input type="number" id="peso" class="nes-input" />
+      </div>
+      
+      <div class="nes-field">
+        <label for="name_field">altura</label>
+        <input type="number" id="altura" class="nes-input" />
+      </div>
+      
+      <button type="button" onclick="calcularImc()" class="nes-btn is-primary">
+        Calcular
+      </button>
+      
+      <div>
+        <p>Seu IMC é de: <span id="imc">XX</span></p>
+        <p id="diagnostico"></p>
+      </div>
+    </div>
+
+    <style>
+      .calculo {
+        max-width: 400px;
+      }
+
+      body {
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+    </style>
+
+    <script>
+      function calcularImc() {
+        var peso = Number(document.getElementById("peso").value); // busca o valor inserido de peso
+        var altura = Number(document.getElementById("altura").value); // busca o valor inserido de altura
+        var imc = peso / (altura * altura); // calcula o imc
+        document.getElementById("imc").innerHTML = imc; // mostra o IMC calculado na tela
+
+        var diagnostico = gerarDiagnostico(imc); // busca o diagnostico com base no IMC
+        document.getElementById("diagnostico").innerHTML = `seu diagnóstico é: ${diagnostico}`; // mostra o diagnóstico na tela
+      }
+
+      function gerarDiagnostico(imc) {
+        if (imc > 18.5 && imc < 24.9) {
+          return "normal";
+        }
+        if (imc > 25 && imc < 29.9) {
+          return "sobrepeso";
+        }
+        if (imc > 30 && imc < 40) {
+          return "obesidade";
+        }
+        if (imc > 40) {
+          return "obesidade grave";
+        }
+      }
+    </script>
+  </body>
+</html>
