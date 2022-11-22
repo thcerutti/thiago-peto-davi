@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(179, 119, 235);
+            font: normal 13pt arial
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual o seu PAÍS</h1>
+    Digite aqui seu país: <input type="text" name="txtPais" id="txtPais">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+    function calcular() {
+    var txtPais = document.getElementById('txtPais')
+    var res = document.getElementById('res')
+        console.log (txtPais.value)
+        if (txtPais.value.toUpperCase() == 'BRASIL'){
+            res.innerHTML = `Você nasceu em ${txtPais.value.toLowerCase()} então vc é Brasileiro`
+
+        }else {
+            res.innerHTML = `Você nasceu em ${txtPais.value.toLowerCase()} logo vc é Estrangeiro(a)`
+        }
+    }
+    </script>
+</body>
+</html>
